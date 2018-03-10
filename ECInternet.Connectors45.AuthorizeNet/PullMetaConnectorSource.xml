@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MetaData>
+	<DataType name="Customer">
+		<Record name="Customer">
+			<Field name="AccountNo" type="string" />
+			<Field name="AccountName" type="string" />
+			<Field name="CreditLimit" type="decimal" />
+			<Field name="Currency" type="string" />
+			<Field name="AddressLine1" type="string" />
+			<Field name="AddressLine2" type="string" />
+			<Field name="AddressLine3" type="string" />
+			<Field name="AddressLine4" type="string" />
+			<Field name="City" type="string" />
+			<Field name="County" type="string" />
+			<Field name="Country" type="string" />
+			<Field name="PostCode" type="string"/>
+			<Field name="DefaultTaxCode" type="integer" />
+			<Field name="OrderPriority" type="string" />
+			<Field name="UseTaxCodeAsDefault" type="bool" />
+		</Record>
+	</DataType>
+	<DataType name="Order">
+		<Record name="Order">
+			<Field name="UniqueID" type="integer" />
+			<Field name="InvoiceType" type="integer" />
+			<Field name="Customer" type="string" />
+			<Field name="OrderDate" type="date" />
+			<Field name="ShipDate" type="date" />
+			<Field name="OrderNo" type="string" />
+			<Field name="ExchangeRate" type="decimal" />
+			<Field name="NetValue" type="decimal" />
+			<Field name="DiscountValue" type="decimal" />
+			<Field name="TaxValue" type="decimal" />
+			<Record name="OrderDetail">
+				<Field name="Item" type="string" />
+				<Field name="Description" type="string" />
+				<Field name="Qty" type="decimal" />
+				<Field name="UnitAmount" type="decimal" />
+				<Field name="TaxCode" type="integer" />
+				<Field name="DiscountAmount" type="decimal" />
+				<Field name="TaxAmount" type="decimal" />
+				<Record name="SerialNumbers">
+					<Field name="Serial" type="string" />
+				</Record>
+			</Record>
+		</Record>
+	</DataType>
+</MetaData>

@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Records name="Order">
+	<Record>
+		<Field name="UniqueID" value="1230092" />
+		<Field name="OrderType" value="0" />
+		<Field name="Customer" value="ABB001" />
+		<Field name="OrderDate" value="12/05/2012" />
+		<Field name="ShipDate" value="13/05/2012" />
+		<Field name="OrderNo" value="OR00012" />
+		<Field name="ExchangeRate" value="1" />
+		<Field name="NetValue" value="100.95" />
+		<Field name="DiscountValue" value="0" />
+		<Field name="TaxValue" value="17.95" />
+		<Records name="OrderDetail">
+			<Record>
+				<Field name="Item" value="A1-103/0" />
+				<Field name="Description" value="White Melanite Board" />
+				<Field name="Qty" value="2" />
+				<Field name="UnitAmount" value="13.95" />
+				<Field name="TaxCode" value="1" />
+				<Field name="DiscountAmount" value="0" />
+				<Field name="TaxAmount" value="5" />
+				<Records name="SerialNumbers">
+					<Record>
+						<Field name="Serial" value="SN000023" />
+					</Record>
+					<Record>
+						<Field name="Serial" value="SN000024" />
+					</Record>
+				</Records>
+			</Record>
+			<Record>
+				<Field name="Item" value="A1-104/0" />
+				<Field name="Description" value="Black Magic Marker, a Felt Tip Pen" />
+				<Field name="Qty" value="1" />
+				<Field name="UnitAmount" value="6.66" />
+				<Field name="TaxCode" value="1" />
+				<Field name="DiscountAmount" value="0" />
+				<Field name="TaxAmount" value="1.11" />
+			</Record>
+		</Records>
+	</Record>
+</Records>

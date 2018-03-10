@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<IMPORTS>
+	<IMPORT id="1" updateoperation="2" name="Capture">
+		<VIEWS>
+			<VIEW parentid="" id="Capture" mandatory="true" name="Capture" >
+				<FIELD id="ApiLoginID" />
+				<FIELD id="ApiTransactionKey" />
+				<FIELD id="TransactionAmount" />
+				<FIELD id="TransactionID" />
+				<FIELD id="ResponseCode" />
+				<FIELD id="MessageCode" />
+				<FIELD id="Description" />
+				<FIELD id="AuthCode" />
+				<FIELD id="ErrorCode" />
+				<FIELD id="ErrorMessage" />
+		</VIEW>
+		</VIEWS>
+	</IMPORT>
+</IMPORTS>
