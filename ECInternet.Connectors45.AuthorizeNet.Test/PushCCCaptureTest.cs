@@ -25,7 +25,7 @@ namespace ECInternet.Connectors45.Authorize_Net.Test
 			//string ApiLoginID = "9r95gdR4N7T3";
 			//string ApiTransactionKey = "7C2p9DN6K8VztH5R";
 			decimal TransactionAmount = 1.10M;
-			string TransactionID = "60982564587";
+			string TransactionID = "40013241246";
 
 			// Create the TransformDefinition for the Order datastructure.
 			TransformDefinition tfmDef = CreateCaptureDefinition();
@@ -69,6 +69,12 @@ namespace ECInternet.Connectors45.Authorize_Net.Test
 			TransformDefinitionBuilder.CreateField(order, "ApiTransactionKey");
 			TransformDefinitionBuilder.CreateField(order, "TransactionAmount");
 			TransformDefinitionBuilder.CreateField(order, "TransactionID");
+			TransformDefinitionBuilder.CreateField(order, "ResponseCode");
+			TransformDefinitionBuilder.CreateField(order, "MessageCode");
+			TransformDefinitionBuilder.CreateField(order, "Description");
+			TransformDefinitionBuilder.CreateField(order, "AuthCode");
+			TransformDefinitionBuilder.CreateField(order, "ErrorCode");
+			TransformDefinitionBuilder.CreateField(order, "ErrorMessage");
 
 			return result;
 		}

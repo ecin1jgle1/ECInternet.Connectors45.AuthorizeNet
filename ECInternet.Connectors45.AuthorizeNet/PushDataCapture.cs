@@ -114,35 +114,34 @@ namespace ECInternet.Connectors45.Authorize_Net
 					if (response != null)
 					{
 						TraceWriter.Write("Authorize.Net capture response:\n" + response.ToTraceOutput());
+						if (transaction.HasField("ResponseCode"))
+						{
+							transaction.SetFieldValue("ResponseCode", response.ResponseCode, true);
+						}
+						if (transaction.HasField("MessageCode"))
+						{
+							transaction.SetFieldValue("MessageCode", response.MessageCode, true);
+						}
+						if (transaction.HasField("Description"))
+						{
+							transaction.SetFieldValue("Description", response.Description, true);
+						}
+						if (transaction.HasField("AuthCode"))
+						{
+							transaction.SetFieldValue("AuthCode", response.AuthCode, true);
+						}
+						if (transaction.HasField("ErrorCode"))
+						{
+							transaction.SetFieldValue("ErrorCode", response.ErrorCode, true);
+						}
+						if (transaction.HasField("ErrorMessage"))
+						{
+							transaction.SetFieldValue("ErrorMessage", response.ErrorMessage, true);
+						}
 					}
 					else
 					{
 						TraceWriter.Write("Authorize.Net capture response is NULL.");
-					}
-
-					if (transaction.HasField("ResponseCode"))
-					{
-						transaction.SetFieldValue("ResponseCode", response.ResponseCode, true);
-					}
-					if (transaction.HasField("MessageCode"))
-					{
-						transaction.SetFieldValue("MessageCode", response.MessageCode, true);
-					}
-					if (transaction.HasField("Description"))
-					{
-						transaction.SetFieldValue("Description", response.Description, true);
-					}
-					if (transaction.HasField("AuthCode"))
-					{
-						transaction.SetFieldValue("AuthCode", response.AuthCode, true);
-					}
-					if (transaction.HasField("ErrorCode"))
-					{
-						transaction.SetFieldValue("ErrorCode", response.ErrorCode, true);
-					}
-					if (transaction.HasField("ErrorMessage"))
-					{
-						transaction.SetFieldValue("ErrorMessage", response.ErrorMessage, true);
 					}
 
 					// Being a good citizen.

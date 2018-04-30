@@ -1,6 +1,22 @@
 <?xml version="1.0"?>
 <IMPORTS>
-	<IMPORT id="1" updateoperation="2" name="Capture">
+	<IMPORT id="1" updateoperation="2" name="Authorize">
+		<VIEWS>
+			<VIEW parentid="" id="Authorize" mandatory="true" name="Authorize" >
+				<FIELD id="ApiLoginID" />
+				<FIELD id="ApiTransactionKey" />
+				<FIELD id="TransactionAmount" />
+				<FIELD id="TransactionID" />
+				<FIELD id="ResponseCode" />
+				<FIELD id="MessageCode" />
+				<FIELD id="Description" />
+				<FIELD id="AuthCode" />
+				<FIELD id="ErrorCode" />
+				<FIELD id="ErrorMessage" />
+		</VIEW>
+		</VIEWS>
+	</IMPORT>
+	<IMPORT id="2" updateoperation="2" name="Capture">
 		<VIEWS>
 			<VIEW parentid="" id="Capture" mandatory="true" name="Capture" >
 				<FIELD id="ApiLoginID" />
@@ -13,7 +29,7 @@
 				<FIELD id="AuthCode" />
 				<FIELD id="ErrorCode" />
 				<FIELD id="ErrorMessage" />
-		</VIEW>
+			</VIEW>
 		</VIEWS>
 	</IMPORT>
 </IMPORTS>
