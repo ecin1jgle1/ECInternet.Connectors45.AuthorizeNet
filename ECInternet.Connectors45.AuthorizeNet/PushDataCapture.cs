@@ -134,9 +134,9 @@ namespace ECInternet.Connectors45.Authorize_Net
 						{
 							transaction.SetFieldValue("ErrorCode", response.ErrorCode, true);
 						}
-						if (transaction.HasField("ErrorMessage"))
+						if (transaction.HasField("CaptureErrorMessage"))
 						{
-							transaction.SetFieldValue("ErrorMessage", response.ErrorMessage, true);
+							transaction.SetFieldValue("CaptureErrorMessage", response.CaptureErrorMessage, true);
 						}
 					}
 					else

@@ -73,7 +73,6 @@ namespace ECInternet.Connectors45.Authorize_Net
 					if (response.transactionResponse.messages != null)
 					{
 						capture.TransactionID = response.transactionResponse.transId;
-						capture.ResponseCode = response.transactionResponse.responseCode;
 						capture.MessageCode = response.transactionResponse.messages[0].code;
 						capture.Description = response.transactionResponse.messages[0].description;
 						capture.AuthCode = response.transactionResponse.authCode;
@@ -82,8 +81,9 @@ namespace ECInternet.Connectors45.Authorize_Net
 					{
 						if (response.transactionResponse.errors != null)
 						{
+							capture.ResponseCode = response.transactionResponse.responseCode;
 							capture.ErrorCode = response.transactionResponse.errors[0].errorCode;
-							capture.ErrorMessage = response.transactionResponse.errors[0].errorText;
+							capture.CaptureErrorMessage = response.transactionResponse.errors[0].errorText;
 						}
 					}
 				}
@@ -91,13 +91,14 @@ namespace ECInternet.Connectors45.Authorize_Net
 				{
 					if (response.transactionResponse != null && response.transactionResponse.errors != null)
 					{
+						capture.ResponseCode = response.transactionResponse.responseCode;
 						capture.ErrorCode = response.transactionResponse.errors[0].errorCode;
-						capture.ErrorMessage = response.transactionResponse.errors[0].errorText;
+						capture.CaptureErrorMessage = response.transactionResponse.errors[0].errorText;
 					}
 					else
 					{
 						capture.ErrorCode = response.messages.message[0].code;
-						capture.ErrorMessage = response.messages.message[0].text;
+						capture.CaptureErrorMessage = response.messages.message[0].text;
 					}
 				}
 			}

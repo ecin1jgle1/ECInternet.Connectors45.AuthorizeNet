@@ -19,7 +19,7 @@ namespace ECInternet.Connectors45.Authorize_Net
 		public string Description { get; set; }
 		public string AuthCode { get; set; }
 		public string ErrorCode { get; set; }
-		public string ErrorMessage { get; set; }
+		public string CaptureErrorMessage { get; set; }
 
 		public string ToTraceOutput()
 		{
@@ -33,7 +33,7 @@ namespace ECInternet.Connectors45.Authorize_Net
 			list.Add(string.Format("Description:\t[{0}]", Description));
 			list.Add(string.Format("Auth Code:\t[{0}]", AuthCode));
 			list.Add(string.Format("Error Code:\t[{0}]", ErrorCode));
-			list.Add(string.Format("Error Message:\t[{0}]", ErrorMessage));
+			list.Add(string.Format("Error Message:\t[{0}]", CaptureErrorMessage));
 
 			trace = string.Join("\n\t", list.ToArray());
 

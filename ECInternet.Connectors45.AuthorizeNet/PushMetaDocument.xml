@@ -12,7 +12,7 @@
 				<FIELD id="Description" />
 				<FIELD id="AuthCode" />
 				<FIELD id="ErrorCode" />
-				<FIELD id="ErrorMessage" />
+				<FIELD id="AuthErrorMessage" />
 		</VIEW>
 		</VIEWS>
 	</IMPORT>
@@ -28,7 +28,7 @@
 				<FIELD id="Description" />
 				<FIELD id="AuthCode" />
 				<FIELD id="ErrorCode" />
-				<FIELD id="ErrorMessage" />
+				<FIELD id="CaptureErrorMessage" />
 			</VIEW>
 		</VIEWS>
 	</IMPORT>

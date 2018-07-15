@@ -24,7 +24,7 @@ namespace ECInternet.Connectors45.Authorize_Net.Test
 		{
 			//string ApiLoginID = "9r95gdR4N7T3";
 			//string ApiTransactionKey = "7C2p9DN6K8VztH5R";
-			decimal TransactionAmount = 1.10M;
+			decimal TransactionAmount = 552.50M;
 			string TransactionID = "40013241246";
 
 			// Create the TransformDefinition for the Order datastructure.
