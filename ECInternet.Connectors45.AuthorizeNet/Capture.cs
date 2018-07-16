@@ -20,6 +20,8 @@ namespace ECInternet.Connectors45.Authorize_Net
 		public string AuthCode { get; set; }
 		public string ErrorCode { get; set; }
 		public string CaptureErrorMessage { get; set; }
+		public string RefTransId { get; set; }
+		public decimal RefTransAmount { get; set; }
 
 		public string ToTraceOutput()
 		{
@@ -34,6 +36,9 @@ namespace ECInternet.Connectors45.Authorize_Net
 			list.Add(string.Format("Auth Code:\t[{0}]", AuthCode));
 			list.Add(string.Format("Error Code:\t[{0}]", ErrorCode));
 			list.Add(string.Format("Error Message:\t[{0}]", CaptureErrorMessage));
+			list.Add("Request:");
+			list.Add(string.Format("requested Transaction ID:\t[{0}]", RefTransId));
+			list.Add(string.Format("requested Transaction Amount:\t[{0:C}]", RefTransAmount));
 
 			trace = string.Join("\n\t", list.ToArray());
 

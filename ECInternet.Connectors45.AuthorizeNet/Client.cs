@@ -67,6 +67,8 @@ namespace ECInternet.Connectors45.Authorize_Net
 			if (response != null)
 			{
 				capture = new Capture();
+				capture.RefTransId = pTransactionID;
+				capture.RefTransAmount = pTransactionAmount;
 
 				if (response.messages.resultCode == messageTypeEnum.Ok)
 				{
