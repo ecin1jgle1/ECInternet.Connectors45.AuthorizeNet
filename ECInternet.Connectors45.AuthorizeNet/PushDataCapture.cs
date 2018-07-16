@@ -114,29 +114,29 @@ namespace ECInternet.Connectors45.Authorize_Net
 					if (response != null)
 					{
 						TraceWriter.Write("Authorize.Net capture response:\n" + response.ToTraceOutput());
-						if (transaction.HasField("ResponseCode"))
+						if (transaction.HasField(nameof(Capture.ResponseCode)))
 						{
-							transaction.SetFieldValue("ResponseCode", response.ResponseCode, true);
+							transaction.SetFieldValue(nameof(Capture.ResponseCode), response.ResponseCode, true);
 						}
-						if (transaction.HasField("MessageCode"))
+						if (transaction.HasField(nameof(Capture.MessageCode)))
 						{
-							transaction.SetFieldValue("MessageCode", response.MessageCode, true);
+							transaction.SetFieldValue(nameof(Capture.MessageCode), response.MessageCode, true);
 						}
-						if (transaction.HasField("Description"))
+						if (transaction.HasField(nameof(Capture.Description)))
 						{
-							transaction.SetFieldValue("Description", response.Description, true);
+							transaction.SetFieldValue(nameof(Capture.Description), response.Description, true);
 						}
-						if (transaction.HasField("AuthCode"))
+						if (transaction.HasField(nameof(Capture.AuthCode)))
 						{
-							transaction.SetFieldValue("AuthCode", response.AuthCode, true);
+							transaction.SetFieldValue(nameof(Capture.AuthCode), response.AuthCode, true);
 						}
-						if (transaction.HasField("ErrorCode"))
+						if (transaction.HasField(nameof(Capture.ErrorCode)))
 						{
-							transaction.SetFieldValue("ErrorCode", response.ErrorCode, true);
+							transaction.SetFieldValue(nameof(Capture.ErrorCode), response.ErrorCode, true);
 						}
-						if (transaction.HasField("CaptureErrorMessage"))
+						if (transaction.HasField(nameof(Capture.CaptureErrorMessage)))
 						{
-							transaction.SetFieldValue("CaptureErrorMessage", response.CaptureErrorMessage, true);
+							transaction.SetFieldValue(nameof(Capture.CaptureErrorMessage), response.CaptureErrorMessage, true);
 						}
 					}
 					else

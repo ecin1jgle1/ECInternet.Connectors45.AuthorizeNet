@@ -65,16 +65,16 @@ namespace ECInternet.Connectors45.Authorize_Net.Test
 			// Create the Record Definition
 			TransformRecordDefinition order = TransformDefinitionBuilder.CreateRecord(result, "Capture", string.Empty);
 
-			TransformDefinitionBuilder.CreateField(order, "ApiLoginID");
-			TransformDefinitionBuilder.CreateField(order, "ApiTransactionKey");
-			TransformDefinitionBuilder.CreateField(order, "TransactionAmount");
-			TransformDefinitionBuilder.CreateField(order, "TransactionID");
-			TransformDefinitionBuilder.CreateField(order, "ResponseCode");
-			TransformDefinitionBuilder.CreateField(order, "MessageCode");
-			TransformDefinitionBuilder.CreateField(order, "Description");
-			TransformDefinitionBuilder.CreateField(order, "AuthCode");
-			TransformDefinitionBuilder.CreateField(order, "ErrorCode");
-			TransformDefinitionBuilder.CreateField(order, "ErrorMessage");
+			TransformDefinitionBuilder.CreateField(order, nameof(Capture.ApiLoginID));// "ApiLoginID");
+			TransformDefinitionBuilder.CreateField(order, nameof(Capture.ApiTransactionKey));
+			TransformDefinitionBuilder.CreateField(order, nameof(Capture.TransactionAmount));
+			TransformDefinitionBuilder.CreateField(order, nameof(Capture.TransactionID));
+			TransformDefinitionBuilder.CreateField(order, nameof(Capture.ResponseCode));
+			TransformDefinitionBuilder.CreateField(order, nameof(Capture.MessageCode));
+			TransformDefinitionBuilder.CreateField(order, nameof(Capture.Description));
+			TransformDefinitionBuilder.CreateField(order, nameof(Capture.AuthCode));
+			TransformDefinitionBuilder.CreateField(order, nameof(Capture.ErrorCode));
+			TransformDefinitionBuilder.CreateField(order, nameof(Capture.CaptureErrorMessage));
 
 			return result;
 		}
