@@ -98,8 +98,9 @@ namespace ECInternet.Connectors45.Authorize_Net
 				if (TransactionHasStatusUpdateFields(transaction))
 				{
 
-					string ApiLoginID = _client._username;
-					string ApiTransactionKey = _client._password;
+					string ApiLoginID = _client._APILoginKey;
+					string ApiTransactionKey = _client._ApiTransactionKey;
+					bool sandbox = _client._Sandbox;
 
 					string _transactionAmount = transaction.GetValue("TransactionAmount").ToString();
 					decimal transactionAmount = 0.00M;
@@ -107,9 +108,10 @@ namespace ECInternet.Connectors45.Authorize_Net
 					{
 						throw new Exception(string.Format("Unable to parse transaction amount [{0}]", _transactionAmount));
 					}
+
 					string TransactionID = transaction.GetValue("TransactionID").ToString();
 
-					Capture response = Client.Capture(ApiLoginID, ApiTransactionKey, transactionAmount, TransactionID);
+					Capture response = Client.Capture(ApiLoginID, ApiTransactionKey, transactionAmount, TransactionID, sandbox);
 
 					if (response != null)
 					{

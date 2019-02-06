@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
 
+using Realisable.Utils;
 using Realisable.Utils.DTO;
 
 using AuthorizeNet.Api.Controllers;
@@ -13,15 +14,32 @@ namespace ECInternet.Connectors45.Authorize_Net
 {
 	public class Client
 	{
-		public string _username = string.Empty;
-		public string _password = string.Empty;
+		public string _APILoginKey = string.Empty;
+		public string _ApiTransactionKey = string.Empty;
+		public bool _Sandbox = false;
 
 		public Client(SystemConnectorDTO systemConnector)
 		{
-			_username = systemConnector.UserId;
-			_password = systemConnector.Password;
-		}
+			_APILoginKey = systemConnector.UserId;
+			_ApiTransactionKey = systemConnector.Password;
 
+			Dictionary<string, string> dictCompany = new Dictionary<string, string>();
+			try
+			{
+				dictCompany = ConnectionStringParser.ParseStringIntoTokens(systemConnector.Company);
+			}
+			catch
+			{
+			}
+
+			if (dictCompany.ContainsKey("sandbox"))
+			{
+				string sandboxValue = dictCompany["sandbox"];
+				_Sandbox = (sandboxValue.ToLower() == "yes");
+				_Sandbox |= (sandboxValue.ToLower() == "true");
+				_Sandbox |= (sandboxValue == "1");
+			}
+		}
 
 		/// <summary>
 		/// Capture a Transaction Previously Submitted Via CaptureOnly
