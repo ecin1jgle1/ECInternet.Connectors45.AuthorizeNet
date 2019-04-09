@@ -50,7 +50,8 @@ namespace ECInternet.Connectors45.Authorize_Net
 		/// <param name="pTransactionID">The TransactionID of the previous CaptureOnly operation</param>
 		public static Capture Capture(String pApiLoginID, String pApiTransactionKey, decimal pTransactionAmount, string pTransactionID, bool pSandbox = true)
 		{
-			Console.WriteLine("Capture Previously Authorized Amount");
+			TraceWriter.Write("Capture Previously Authorized Amount");
+			TraceWriter.Write(string.Format($"Transaction ID: [{pTransactionID}]; Transaction Amount: [{pTransactionAmount}]; Sandbox: [{pSandbox}]"));
 
 			ApiOperationBase<ANetApiRequest, ANetApiResponse>.RunEnvironment = pSandbox ? AuthorizeNet.Environment.SANDBOX : AuthorizeNet.Environment.PRODUCTION;
 
