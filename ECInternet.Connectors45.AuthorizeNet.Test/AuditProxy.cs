@@ -84,5 +84,10 @@ namespace ECInternet.Connectors45.Authorize_Net.Test
 				});
 			Debug.WriteLine(message);
 		}
+
+		public void WriteTrace(string transformId, TraceType traceType, Realisable.Data.Transform.TraceLevel level, string traceName, string data)
+		{
+			throw new System.NotImplementedException();
+		}
 	}
 }

@@ -116,16 +116,35 @@ namespace ECInternet.Connectors45.Authorize_Net.Test
 		/// Processes a Push Style dataset by instantiating the ITransformInterop object and making the appropriate calls.
 		/// </summary>
 		/// <param name="transactionFactory">The transaction factory containing the dataset.</param>
-		protected string ProcessTransactions(TransactionFactory transactionFactory)
+		//protected string ProcessTransactions(TransactionFactory transactionFactory)
+		//{
+		//	ITransformInterop import = new TransformInterop();
+		//	import.CreateController(JOBDEF_ID, INSTANCE_ID, transactionFactory.TransformDefinition.GetXml(), transactionFactory.Data.OuterXml, true, string.Empty);
+		//	((TransformInterop) import).SetAuditProxy(new AuditProxy());
+
+		//	// Run the actual import.
+		//	import.Process();
+
+		//	return import.TransformedData();
+		//}
+		protected static void ProcessTransactions(TransactionFactory transactionFactory)
 		{
-			ITransformInterop import = new TransformInterop();
-			import.CreateController(JOBDEF_ID, INSTANCE_ID, transactionFactory.TransformDefinition.GetXml(), transactionFactory.Data.OuterXml, true, string.Empty);
-			((TransformInterop) import).SetAuditProxy(new AuditProxy());
+			TransformDefinition tfmDef = transactionFactory.TransformDefinition;
+
+			// Obtain the system connector.
+			SystemConnectorDTO connectorDTO = new SystemConnectorDTO(tfmDef.Options.GetProperty(GlobalResources.SYS_CONNECT_SYSID_OPT));
+
+			// Get the updateOperation.
+			eERPUpdateOperation updateOperation = tfmDef.Options.GetProperty<eERPUpdateOperation>(GlobalResources.SYS_CONNECT_UPDATE_OP_OPT);
+
+			// Create the ITransformProcess object implemented by the connector.
+			PushDataInterop target = new PushDataInterop();
+
+			// Now initialise.
+			target.Initialise(tfmDef, transactionFactory.CreateTransactionIterator(), false, tfmDef.AuditDefinition.ErrorAction, updateOperation, connectorDTO, new AuditProxy());
 
 			// Run the actual import.
-			import.Process();
-
-			return import.TransformedData();
+			target.Process();
 		}
 
 		protected TransactionIterator ProcessTransactions(TransactionFactory transactionFactory, TransformDefinition tfmDef, SystemConnectorDTO system)
@@ -160,14 +179,19 @@ namespace ECInternet.Connectors45.Authorize_Net.Test
 		/// </summary>
 		/// <param name="transactionFactory">The transaction factory containing the dataset.</param>
 		/// <typeparam name="T">The type of exception expected.</typeparam>
-		protected void ProcessExceptionalTransactions<T>(TransactionFactory transactionFactory) where T : Exception
-		{
-			ITransformInterop import = new TransformInterop();
-			import.CreateController(JOBDEF_ID, INSTANCE_ID, transactionFactory.TransformDefinition.GetXml(), transactionFactory.Data.OuterXml, false, string.Empty);
-			((TransformInterop) import).SetAuditProxy(new AuditProxy());
+		//protected void ProcessExceptionalTransactions<T>(TransactionFactory transactionFactory) where T : Exception
+		//{
+		//	ITransformInterop import = new TransformInterop();
+		//	import.CreateController(JOBDEF_ID, INSTANCE_ID, transactionFactory.TransformDefinition.GetXml(), transactionFactory.Data.OuterXml, false, string.Empty);
+		//	((TransformInterop) import).SetAuditProxy(new AuditProxy());
 
+		//	// Run the actual import using AssetExternsions.Throws method.
+		//	AssertExtensions.Throws<T>(() => import.Process());
+		//}
+		protected static void ProcessExceptionalTransactions<T>(TransactionFactory transactionFactory) where T : Exception
+		{
 			// Run the actual import using AssetExternsions.Throws method.
-			AssertExtensions.Throws<T>(() => import.Process());
+			AssertExtensions.Throws<T>(() => ProcessTransactions(transactionFactory));
 		}
 	}
 }

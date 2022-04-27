@@ -31,33 +31,49 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Castle.Core">
-      <HintPath>..\..\..\..\inetpub\wwwroot\IMan\bin\Castle.Core.dll</HintPath>
+    <Reference Include="Castle.Core, Version=2.5.1.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Program Files (x86)\Realisable Software\IMan\Web\bin\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentNHibernate">
+      <HintPath>..\..\..\..\Program Files (x86)\Realisable Software\IMan\Web\bin\FluentNHibernate.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\MicrosoftVisualStudioQualityToolsUnitTestFramework.1.0.0\lib\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="NHibernate">
-      <HintPath>..\..\..\..\inetpub\wwwroot\IMan\bin\NHibernate.dll</HintPath>
+    <Reference Include="NHibernate, Version=3.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Program Files (x86)\Realisable Software\IMan\Web\bin\NHibernate.dll</HintPath>
     </Reference>
-    <Reference Include="NHibernate.ByteCode.Castle">
-      <HintPath>..\..\..\..\inetpub\wwwroot\IMan\bin\NHibernate.ByteCode.Castle.dll</HintPath>
+    <Reference Include="NHibernate.ByteCode.Castle, Version=3.1.0.4000, Culture=neutral, PublicKeyToken=aa95f207798dfdb4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Program Files (x86)\Realisable Software\IMan\Web\bin\NHibernate.ByteCode.Castle.dll</HintPath>
     </Reference>
-    <Reference Include="Realisable.Data.Interop">
-      <HintPath>..\..\..\..\inetpub\wwwroot\IMan\bin\Realisable.Data.Interop.dll</HintPath>
+    <Reference Include="Realisable.Data.Interop, Version=3.2.0.0, Culture=neutral, PublicKeyToken=b31f8c7bc7628d86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Assemblies\42\Realisable.Data.Interop.dll</HintPath>
     </Reference>
-    <Reference Include="Realisable.JobDefinition">
-      <HintPath>..\..\..\..\inetpub\wwwroot\IMan\bin\Realisable.JobDefinition.dll</HintPath>
+    <Reference Include="Realisable.JobDefinition, Version=3.2.0.0, Culture=neutral, PublicKeyToken=b31f8c7bc7628d86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Assemblies\42\Realisable.JobDefinition.dll</HintPath>
     </Reference>
-    <Reference Include="Realisable.Log">
-      <HintPath>..\..\..\..\inetpub\wwwroot\IMan\bin\Realisable.Log.dll</HintPath>
+    <Reference Include="Realisable.Log, Version=3.2.0.0, Culture=neutral, PublicKeyToken=b31f8c7bc7628d86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Assemblies\42\Realisable.Log.dll</HintPath>
     </Reference>
-    <Reference Include="Realisable.Resources">
-      <HintPath>..\..\..\..\inetpub\wwwroot\IMan\bin\Realisable.Resources.dll</HintPath>
+    <Reference Include="Realisable.Resources, Version=3.2.0.0, Culture=neutral, PublicKeyToken=b31f8c7bc7628d86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Assemblies\42\Realisable.Resources.dll</HintPath>
     </Reference>
-    <Reference Include="Realisable.Utils">
-      <HintPath>..\..\..\..\inetpub\wwwroot\IMan\bin\Realisable.Utils.dll</HintPath>
+    <Reference Include="Realisable.Utils, Version=3.2.0.0, Culture=neutral, PublicKeyToken=b31f8c7bc7628d86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Assemblies\42\Realisable.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="RealisableEncDencUtils, Version=1.0.0.0, Culture=neutral, PublicKeyToken=b31f8c7bc7628d86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>..\..\Assemblies\RealisableEncDencUtils.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
